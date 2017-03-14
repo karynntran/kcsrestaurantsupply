@@ -1242,6 +1242,50 @@
         "imageName": "Pole_Chrome.png",
         "description": "",
         "": ""
+      },
+      {
+        "categoryName": "test",
+        "typeName": "Black Epoxy Pole",
+        "grouping": "A",
+        "model": "BEP-86",
+        "dimension": 86,
+        "quantityPerBox": 4,
+        "imageName": "Pole_Chrome.png",
+        "description": "",
+        "": ""
+      },
+      {
+        "categoryName": "test",
+        "typeName": "Black Epoxy Pole",
+        "grouping": "A",
+        "model": "BEP-86",
+        "dimension": 86,
+        "quantityPerBox": 4,
+        "imageName": "Pole_Chrome.png",
+        "description": "",
+        "": ""
+      },
+      {
+        "categoryName": "test",
+        "typeName": "Black Epoxy Pole",
+        "grouping": "A",
+        "model": "BEP-86",
+        "dimension": 86,
+        "quantityPerBox": 4,
+        "imageName": "Pole_Chrome.png",
+        "description": "",
+        "": ""
+      },
+      {
+        "categoryName": "test",
+        "typeName": "Black Epoxy Pole",
+        "grouping": "A",
+        "model": "BEP-86",
+        "dimension": 86,
+        "quantityPerBox": 4,
+        "imageName": "Pole_Chrome.png",
+        "description": "",
+        "": ""
       }
     ]
   }

@@ -7,7 +7,6 @@ import Header from './components/header';
 import Main from './components/main';
 import Footer from './components/footer';
 
-import Navigation from './components/navigation';
 import SearchBar from './components/search_bar';
 import RecipesList from './components/recipes_list';
 
@@ -20,7 +19,8 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			data: ''
+			data: '',
+			sortedData: ''
 		};
 		this.loaded = false;
 		// this._filterList = this._filterList.bind(this);
@@ -45,7 +45,13 @@ class App extends Component {
 			return response.json();
 		})
 		.then(function(data) {
-			that.setState({ data : data.data })
+			let allData = data.data;
+
+			that.setState({ 
+				data : allData
+
+			})
+			console.log(data)
 		});
 	}
 
@@ -56,8 +62,9 @@ class App extends Component {
 	}
 
 	componentWillUnmount() {
-	    window.removeEventListener('scroll', this.handleScroll);
+	    // window.removeEventListener('scroll', this.handleScroll);
 	}
+
 
 
 	// _filterList(term){
@@ -87,11 +94,12 @@ class App extends Component {
 	render(){
 		if (this.loaded === true) {
 			let companyData = this.state.data[0].companyData,
-				productData = this.state.data[1].productData;
+				allData = this.state.data;
+				// categoryData = this.state.categories;
 			return (
 				<div>
 					<Header companyData={companyData} />
-					<Main productData={productData} />
+					<Main allData={allData} />
 					<Footer companyData={companyData} />
 				</div>
 			)

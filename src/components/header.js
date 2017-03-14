@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 
 const Header = (props) => {
-	console.log(props.companyData)
 	return (
 		<div className="header section">
 			<div className="logo vertical"></div>
