@@ -20,7 +20,7 @@ class App extends Component {
 
 		this.state = {
 			data: '',
-			sortedData: ''
+			currentView: ''
 		};
 		this.loaded = false;
 		// this._filterList = this._filterList.bind(this);
@@ -48,7 +48,8 @@ class App extends Component {
 			let allData = data.data;
 
 			that.setState({ 
-				data : allData
+				data : allData,
+				currentView: 'hello'
 
 			})
 			console.log(data)
@@ -99,7 +100,7 @@ class App extends Component {
 			return (
 				<div>
 					<Header companyData={companyData} />
-					<Main allData={allData} />
+					<Main allData={allData} currentView={this.state.currentView}/>
 					<Footer companyData={companyData} />
 				</div>
 			)

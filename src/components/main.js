@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Navigation from './navigation';
+import MainView from './mainView';
 
 
 // import Products from './components/products';
@@ -49,10 +50,11 @@ class Main extends Component {
 			categoryData = [];
 
 		for (var n in array) categoryData.push(n);
-			
+
 		return (
 			<div className="main section">
 				<Navigation categories={categoryData}/>
+				<MainView currentView={this.props.currentView}/>
 			</div>
 		)
 		
