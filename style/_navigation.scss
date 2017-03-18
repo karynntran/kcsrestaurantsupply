@@ -1,0 +1,36 @@
+/*NAVIGATION*/
+
+.navigation {
+	height: 10%;
+	width: 100%;
+	padding: 1em;
+	border-bottom: .25px solid #ccc;
+}
+
+.navigation-li {
+	float: left;
+	margin-right: 1em;
+	border: none;
+}
+.nav-toggle {
+	float: right;
+	margin-left: 1em;
+	font-weight: 700;
+}
+
+.navigation-li {
+	&.false {
+		border: none;	
+		.nav-toggle {
+			transform: rotate(0deg);
+			transition: transform .25s ease-in;
+		}
+	}
+	&.true {
+		.nav-toggle {
+			transform: rotate(90deg);
+			transition: transform .25s ease-in;
+			
+		}
+	}	
+}
