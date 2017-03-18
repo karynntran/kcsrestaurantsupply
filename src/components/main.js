@@ -28,6 +28,8 @@ class Main extends Component {
 				<Navigation categoryData={this.props.categoryData} setMainView={this.props.setMainView}/>
 				<MainView currentView={this.props.currentView}
 					mainViewLoaded={this.props.mainViewLoaded}
+					setSubView={this.props.setSubView}
+					subViewLoaded={this.props.subViewLoaded}
 					groupCategories={this.props.groupCategories}
 					sortGroups = {this.props.sortGroups}/>
 			</div>

@@ -24,7 +24,6 @@ class SubView extends Component {
 			)
 		});
 
-			console.log(this.props.subArrays)
 		return (
 			<div>
 				<div className="subcategory">

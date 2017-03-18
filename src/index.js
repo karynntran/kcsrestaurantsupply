@@ -23,10 +23,13 @@ class App extends Component {
 			currentView: '',
 			categoryData: '',
 			sortedData: '',
-			mainViewLoaded: false
+			mainViewLoaded: false,
+			subViewLoaded: false
 		};
 		this.loaded = false;
 		this._setMainView = this._setMainView.bind(this);
+		this._setSubView = this._setSubView.bind(this);
+
 		this._groupCategories = this._groupCategories.bind(this);
 		this._sortGroups = this._sortGroups.bind(this);
 
@@ -62,7 +65,7 @@ class App extends Component {
 			that.setState({ 
 				data : allData,
 				currentView: [],
-				subCurrentView: [],
+				currentSubView: [],
 				categoryData: sortedArray,
 				sortedData: array
 			})
@@ -113,6 +116,14 @@ class App extends Component {
 		})
 	};
 
+	_setSubView(option){
+		alert(option)
+		this.setState({
+			currentSubView: this.state.sortedData[option],
+			subViewLoaded: true
+		})
+	};
+
 	_groupCategories(arr1, arr2){
 		return arr1.reduce(function(obj, prop) {
 			(obj[prop[arr2]] = obj[prop[arr2]] || []).push(
@@ -146,6 +157,8 @@ class App extends Component {
 						currentView={this.state.currentView}
 						setMainView={this._setMainView}
 						mainViewLoaded = {this.state.mainViewLoaded}
+						setSubView={this._setSubView}
+						subViewLoaded = {this.state.subViewLoaded}
 						categoryData = {categoryData}
 						groupCategories = {this._groupCategories}
 						sortGroups = {this._sortGroups}/>

@@ -24,14 +24,14 @@ class MainView extends Component {
 			groups = this.props.groupCategories(viewData,'typeName'),
 			sortGroups = this.props.sortGroups(groups);
 		
-			console.log(sortGroups)
-
 		if (this.props.mainViewLoaded){
 
 			const subNavigation = sortGroups.map((subnav, index) => {
 				return (
 					<SubNavigationItem key={index}
-						subNavItem={subnav}/>
+						subNavItem={subnav}
+						subGroups={groups}
+						setSubView={this.props.setSubView}/>
 				)
 			})
 
