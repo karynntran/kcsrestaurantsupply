@@ -1101,7 +1101,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "cabinets",
         "typeName": "Black Epoxy Shelving",
         "grouping": "C",
         "model": "BE24X36",
@@ -1112,7 +1112,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "cabinets",
         "typeName": "Black Epoxy Shelving",
         "grouping": "C",
         "model": "BE24X42",
@@ -1123,7 +1123,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "cabinets",
         "typeName": "Black Epoxy Shelving",
         "grouping": "C",
         "model": "BE24X48",
@@ -1134,7 +1134,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "cabinets",
         "typeName": "Black Epoxy Shelving",
         "grouping": "C",
         "model": "BE24X54",
@@ -1156,7 +1156,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "kitchens",
         "typeName": "Black Epoxy Shelving",
         "grouping": "C",
         "model": "BE24X72",
@@ -1167,7 +1167,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "kitchens",
         "typeName": "Black Epoxy Pole",
         "grouping": "A",
         "model": "BEP-7",
@@ -1178,7 +1178,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "kitchens",
         "typeName": "Black Epoxy Pole",
         "grouping": "A",
         "model": "BEP-14",
@@ -1189,7 +1189,7 @@
         "": ""
       },
       {
-        "categoryName": "Wire Shelving",
+        "categoryName": "kitchens",
         "typeName": "Black Epoxy Pole",
         "grouping": "A",
         "model": "BEP-33",

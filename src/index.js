@@ -20,13 +20,19 @@ class App extends Component {
 
 		this.state = {
 			data: '',
-			currentView: ''
+			currentView: '',
+			categoryData: '',
+			sortedData: '',
+			mainViewLoaded: false
 		};
 		this.loaded = false;
-		// this._filterList = this._filterList.bind(this);
+		this._setMainView = this._setMainView.bind(this);
+		this._groupCategories = this._groupCategories.bind(this);
+		this._sortGroups = this._sortGroups.bind(this);
+
+
 		// this._filterByCategory = this._filterByCategory.bind(this);
 
-		// console.log(this.state.recipes)
 	}
 
 	fetchData(){
@@ -47,12 +53,20 @@ class App extends Component {
 		.then(function(data) {
 			let allData = data.data;
 
+			const array = that._groupCategories(allData[1].productData, 'categoryName'),
+				catData = [],
+				sortedArray = that._sortGroups(array);
+
+				// console.log(array,sortedArray)
+
 			that.setState({ 
 				data : allData,
-				currentView: 'hello'
-
+				currentView: [],
+				subCurrentView: [],
+				categoryData: sortedArray,
+				sortedData: array
 			})
-			console.log(data)
+			
 		});
 	}
 
@@ -92,15 +106,49 @@ class App extends Component {
 	// 	// }
 	// };
 
+	_setMainView(option){
+		this.setState({
+			currentView: this.state.sortedData[option],
+			mainViewLoaded: true
+		})
+	};
+
+	_groupCategories(arr1, arr2){
+		return arr1.reduce(function(obj, prop) {
+			(obj[prop[arr2]] = obj[prop[arr2]] || []).push(
+				prop
+			);
+			return obj;
+		}, []);
+
+		// var newArray = [];
+		// for (var n in testarray) newArray.push(n);
+
+		// return newArray;
+	}
+
+	_sortGroups(array1){
+		var array = [];
+		for (var n in array1) array.push(n);
+		return array;
+	}
+
 	render(){
 		if (this.loaded === true) {
 			let companyData = this.state.data[0].companyData,
-				allData = this.state.data;
+				allData = this.state.data,
+				categoryData = this.state.categoryData;
 				// categoryData = this.state.categories;
 			return (
 				<div>
 					<Header companyData={companyData} />
-					<Main allData={allData} currentView={this.state.currentView}/>
+					<Main allData={allData}
+						currentView={this.state.currentView}
+						setMainView={this._setMainView}
+						mainViewLoaded = {this.state.mainViewLoaded}
+						categoryData = {categoryData}
+						groupCategories = {this._groupCategories}
+						sortGroups = {this._sortGroups}/>
 					<Footer companyData={companyData} />
 				</div>
 			)

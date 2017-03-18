@@ -11,13 +11,14 @@ class Navigation extends Component {
 
 
 	render(){
-		const categoryArray = this.props.categories;
+		const categoryArray = this.props.categoryData;
 
-		const categories = categoryArray.map((category, id) => {
+		const categories = categoryArray.map((category, index) => {
 			return (
 				<NavigationItem 
 					category={category} 
-					key={id} />
+					key={index}
+					setMainView={this.props.setMainView} />
 			)
 		});
 

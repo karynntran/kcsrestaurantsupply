@@ -13,12 +13,17 @@ class NavigationItem extends Component {
 
 	_selectedNav(){
 		this.state.active ? this.setState({ active: false}) : this.setState({ active: true });
+		this.props.setMainView(this.props.category);
 	}
+
 
 
 	render(){
 		return (
-			<li className={["navigation-li", this.state.active].join(" ")} onClick={this._selectedNav}>{this.props.category}</li>
+			<li className={["navigation-li", this.state.active].join(" ")} onClick={this._selectedNav}>
+				<span>{this.props.category}</span>
+				<div className="nav-toggle">></div>
+			</li>
 		)
 	}
 
