@@ -21,6 +21,7 @@ class App extends Component {
 		this.state = {
 			data: '',
 			currentView: '',
+			currentSubView: '',
 			categoryData: '',
 			sortedData: '',
 			mainViewLoaded: false,
@@ -116,10 +117,9 @@ class App extends Component {
 		})
 	};
 
-	_setSubView(option){
-		alert(option)
+	_setSubView(subgroups, option){
 		this.setState({
-			currentSubView: this.state.sortedData[option],
+			currentSubView: subgroups[option],
 			subViewLoaded: true
 		})
 	};
@@ -155,6 +155,7 @@ class App extends Component {
 					<Header companyData={companyData} />
 					<Main allData={allData}
 						currentView={this.state.currentView}
+						currentSubView={this.state.currentSubView}
 						setMainView={this._setMainView}
 						mainViewLoaded = {this.state.mainViewLoaded}
 						setSubView={this._setSubView}

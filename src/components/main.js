@@ -26,7 +26,9 @@ class Main extends Component {
 		return (
 			<div className="main section">
 				<Navigation categoryData={this.props.categoryData} setMainView={this.props.setMainView}/>
-				<MainView currentView={this.props.currentView}
+				<MainView 
+					currentView={this.props.currentView}
+					currentSubView={this.props.currentSubView}
 					mainViewLoaded={this.props.mainViewLoaded}
 					setSubView={this.props.setSubView}
 					subViewLoaded={this.props.subViewLoaded}

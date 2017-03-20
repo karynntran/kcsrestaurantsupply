@@ -22,8 +22,10 @@ class MainView extends Component {
 
 		let viewData = this.props.currentView,
 			groups = this.props.groupCategories(viewData,'typeName'),
-			sortGroups = this.props.sortGroups(groups);
-		
+			sortGroups = this.props.sortGroups(groups),
+			currentSubView = this.props.currentSubView;
+
+
 		if (this.props.mainViewLoaded){
 
 			const subNavigation = sortGroups.map((subnav, index) => {
@@ -35,19 +37,20 @@ class MainView extends Component {
 				)
 			})
 
-			const subviews = sortGroups.map((group, index) => {
-				const subArrays = groups[group];
-					return (
-					<li className="subcategory-container" key={index}>
-						<div className="subcategory-title">{group}</div>
+			// const subviews = subView.map((group, index) => {
+			// 	// const subArrays = groups[group];
+			// 	// console.log(subView)
+			// 		return (
+			// 		<li className="subcategory-container" key={index}>
+			// 			<div className="subcategory-title"></div>
 
-						<SubView groupType={group}
-							 groups={groups}
-							 subArrays={subArrays}/>
-					</li>
-				)
+			// 			<SubView groupType={group}
+			// 				 groups={groups}
+			// 				 subArrays={subView}/>
+			// 		</li>
+			// 	)
 
-			});
+			// });
 
 			return (
 				<div className="main-view">
@@ -58,9 +61,9 @@ class MainView extends Component {
 					</ul>
 
 					<div className="sub-view">
-						<ul>
-							{subviews}
-						</ul>
+						<SubView currentSubView={currentSubView}
+								groupSubCategories={this.props.groupCategories}
+								sortSubGroups = {this.props.sortGroups}/>
 					</div>
 
 

@@ -13,12 +13,13 @@ class SubNavigationItem extends Component {
 
 	_selectedSubNav(){
 		this.state.active ? this.setState({ active: false}) : this.setState({ active: true });
-		this.props.setSubView(this.props.subNavItem);
+		this.props.setSubView(this.props.subGroups, this.props.subNavItem);
+
 	}
 
 
 	render(){
-		console.log(this.props.subGroups)
+		// console.log(this.props.subGroups)
 		return (
 			<li key={this.props.key} className={["sub-navigation-li", this.state.active].join(" ")} onClick={this._selectedSubNav}>
 				<span>{this.props.subNavItem}</span>
