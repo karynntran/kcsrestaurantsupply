@@ -30,10 +30,17 @@ class SubView extends Component {
 		// 	 subViewGrouping[sub];
 		// });
 
+			// let imageStyle = {
+			// 	color: 'blue'
+			// }
+
+		console.log(currentSubView)
+
 		const allSubGroups = subGroups.map((subgroup,index) => {
 			return (
 				<SubViewItem key={index}
-					subGroup={subViewGrouping[subgroup]}/>
+					subGroup={subViewGrouping[subgroup]}
+					image= {subViewGrouping[subgroup][0].imageName}/>
 			)
 		})
 	

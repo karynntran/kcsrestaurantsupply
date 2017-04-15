@@ -2,9 +2,10 @@
 
 .main-view {
     height: 100%;
-    width: 100%;
-    border-bottom: .25px solid #ccc;
-    padding: 1em;
+    padding: 2em;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .main-view-title {
 	text-transform: uppercase;

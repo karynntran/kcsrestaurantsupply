@@ -29,6 +29,10 @@ body {
 	font-size:10px;
 	position: relative;
 	background: #f9f9f9;
+	.subcontainer {
+		height: 100%;
+		width: 100%;
+	}
 }
 li,
 ul {
@@ -56,8 +60,7 @@ ul {
 
 .main {
 	position: relative;
-	overflow-y: scroll;
-	height: 30em;
+	height: 80%;
 	font-size: 1.4em;
     padding: 0;
 }

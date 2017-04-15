@@ -113,6 +113,7 @@ class App extends Component {
 	_setMainView(option){
 		this.setState({
 			currentView: this.state.sortedData[option],
+			currentSubView: [],
 			mainViewLoaded: true
 		})
 	};
@@ -151,7 +152,7 @@ class App extends Component {
 				categoryData = this.state.categoryData;
 				// categoryData = this.state.categories;
 			return (
-				<div>
+				<div className="subcontainer">
 					<Header companyData={companyData} />
 					<Main allData={allData}
 						currentView={this.state.currentView}

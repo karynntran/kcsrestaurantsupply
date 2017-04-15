@@ -12,8 +12,17 @@ class NavigationItem extends Component {
 	}
 
 	_selectedNav(){
+		let activeNavs = document.getElementsByClassName('true');
+		if (activeNavs[0] != null) {
+			activeNavs[0].classList.remove('true');		
+		}
 		this.state.active ? this.setState({ active: false}) : this.setState({ active: true });
 		this.props.setMainView(this.props.category);
+
+		let inactiveSubNav = document.getElementsByClassName('sub-navigation-li');
+		[].forEach.call(inactiveSubNav, function(inactive) {
+		    inactive.classList.remove("override");
+		});
 	}
 
 
@@ -21,8 +30,10 @@ class NavigationItem extends Component {
 	render(){
 		return (
 			<li className={["navigation-li", this.state.active].join(" ")} onClick={this._selectedNav}>
-				<span>{this.props.category}</span>
-				<div className="nav-toggle">></div>
+				<div className="navitem">
+					<div className="main-nav">{this.props.category}</div>
+					<div className="nav-toggle">></div>
+				</div>
 			</li>
 		)
 	}

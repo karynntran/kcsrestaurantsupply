@@ -29,11 +29,21 @@ class MainView extends Component {
 		if (this.props.mainViewLoaded){
 
 			const subNavigation = sortGroups.map((subnav, index) => {
+				// let productImage = groups[subnav][0].imageName,
+				// styles = {
+				// 	backgroundImage: `url(../../images/products/${productImage})`,
+				// 	backgroundRepeat: 'no-repeat',
+				// 	backgroundSize: 'contain',
+				// 	backgroundPosition: '100%'
+				// }
+
 				return (
+					// <div className="product-image" style={styles}></div>
 					<SubNavigationItem key={index}
 						subNavItem={subnav}
 						subGroups={groups}
-						setSubView={this.props.setSubView}/>
+						setSubView={this.props.setSubView}
+						image={groups[subnav][0].imageName}/>
 				)
 			})
 

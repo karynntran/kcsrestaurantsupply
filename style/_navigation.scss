@@ -1,35 +1,72 @@
 /*NAVIGATION*/
 
 .navigation {
-	height: 10%;
-	width: 100%;
+	height: 100%;
+	width: 25em;
 	padding: 1em;
-	border-bottom: .25px solid #ccc;
+	column-count: 6;
+	font-size: .85em;
+	text-transform: uppercase;
+	float: left;
+	border-right: 1px solid #ccc;
+	position: relative;
+	overflow-y: scroll;
+
+}
+.navigation-ul {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+    padding: 2em;
+    box-sizing: border-box;
 }
 
 .navigation-li {
-	float: left;
-	margin-right: 1em;
 	border: none;
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+.navitem {
+	box-sizing: border-box;
+	padding: .5em;
+	width: 100%;
+	height: 3.5em;
+	border-bottom: 1px solid #ccc;	
+}
+.main-nav {
+	width: 90%;
+	float: left;
+	top: 50%;
+	position: relative;
+	transform: translateY(-50%);
 }
 .nav-toggle {
+	top: 50%;
+	height: 100%;
+	position: relative;
+	transform: translateY(-50%);
+	width: 10%;
 	float: right;
-	margin-left: 1em;
 	font-weight: 700;
+	transform-origin: 50%;
 }
 
 .navigation-li {
 	&.false {
-		border: none;	
 		.nav-toggle {
-			transform: rotate(0deg);
+			transform: rotate(90deg);
 			transition: transform .25s ease-in;
+			transform-origin: 50%;
 		}
 	}
 	&.true {
 		.nav-toggle {
-			transform: rotate(90deg);
+			transform: rotate(0deg);
 			transition: transform .25s ease-in;
+			transform-origin: 50%;
 			
 		}
 	}	
