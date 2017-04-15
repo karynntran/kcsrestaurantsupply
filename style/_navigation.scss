@@ -28,6 +28,7 @@
 	position: relative;
 	width: 100%;
 	height: auto;
+	background: transparent;
 }
 .navitem {
 	box-sizing: border-box;
@@ -47,11 +48,12 @@
 	top: 50%;
 	height: 100%;
 	position: relative;
-	transform: translateY(-50%);
+	transform: translateY(-50%) rotate(90deg);
 	width: 10%;
 	float: right;
 	font-weight: 700;
-	transform-origin: 50%;
+	transform-origin: 0 0 0 0;
+
 }
 
 .navigation-li {
@@ -59,14 +61,17 @@
 		.nav-toggle {
 			transform: rotate(90deg);
 			transition: transform .25s ease-in;
-			transform-origin: 50%;
+			transform-origin: 0 0 0 0;
 		}
 	}
 	&.true {
+		background: #ccc;
+		.main-nav {
+		}
 		.nav-toggle {
 			transform: rotate(0deg);
 			transition: transform .25s ease-in;
-			transform-origin: 50%;
+			transform-origin: 0 0 0 0;
 			
 		}
 	}	

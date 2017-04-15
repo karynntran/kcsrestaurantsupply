@@ -24,7 +24,8 @@
   border: none;
   position: relative;
   width: 100%;
-  height: auto; }
+  height: auto;
+  background: transparent; }
 
 .navitem {
   box-sizing: border-box;
@@ -44,20 +45,22 @@
   top: 50%;
   height: 100%;
   position: relative;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(90deg);
   width: 10%;
   float: right;
   font-weight: 700;
-  transform-origin: 50%; }
+  transform-origin: 0 0 0 0; }
 
 .navigation-li.false .nav-toggle {
   transform: rotate(90deg);
   transition: transform .25s ease-in;
-  transform-origin: 50%; }
-.navigation-li.true .nav-toggle {
-  transform: rotate(0deg);
-  transition: transform .25s ease-in;
-  transform-origin: 50%; }
+  transform-origin: 0 0 0 0; }
+.navigation-li.true {
+  background: #ccc; }
+  .navigation-li.true .nav-toggle {
+    transform: rotate(0deg);
+    transition: transform .25s ease-in;
+    transform-origin: 0 0 0 0; }
 
 /*MAIN VIEW*/
 .main-view {
@@ -81,17 +84,23 @@
   margin-right: 1em;
   margin-top: .5em;
   background: #ccc;
-  color: white; }
+  color: white;
+  width: 15em; }
+  .sub-navigation-li span {
+    word-wrap: break-word; }
   .sub-navigation-li .nav-product-image {
     background: white;
     height: 10em;
-    width: 10em;
+    width: 100%;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    transition: height .25s ease-in-out; }
   .sub-navigation-li.true .nav-product-image {
-    height: 10em; }
+    height: 10em;
+    transition: height .25s ease-in-out; }
   .sub-navigation-li.override .nav-product-image {
-    height: 0em; }
+    height: 0em;
+    transition: height .25s ease-in-out; }
 
 .sub-view {
   height: 100%;
